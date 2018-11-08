@@ -1,0 +1,15 @@
+function AmountFormat(str) {
+    str = str.replace(/,/g, '');
+
+    if (+str > 0) {
+        str = str.toString() + ".00"
+        str = str.split(".").length > 2 ? str.split(".")[0] + ".00" : 
+        str = str.replace(/^0+/, '');
+        return str.replace(/\B(?=(\d{3})+(?!\d))/g, ",");
+    } else { return (0).toFixed(2); }
+}
+
+/**Alternative to ToAmountFormat Function 
+(cause when the the digits reach the floating point for number in JS its destroying the inputted amount)
+
+/**For my personal used, but i want to share this to you guys. I hope it will help you. 
