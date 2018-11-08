@@ -1,0 +1,22 @@
+function ZeroLeadingDateFormat(f, s, t, i) {
+    var main = { '0': '/', '1': '.', '2': '-', '3': ' ' },
+        symbl = main[i]
+
+    var _dateformat = ('0' + f).slice(-2) + symbl + ('0' + s).slice(-2) + symbl + t
+    return _dateformat
+}
+
+/***************************************
+Hi, im not a pro but I want to share my codes. Hope it will help you guys
+
+/**How it works**/
+  var currDate = new Date()
+  ZeroLeadingDateFormat(currDate.getMonth() - 1, currDate.getDate(), currDate.getFullYear(), 0)
+  
+  --OUTPUT : 11/08/2018
+
+/**LEGENDS FOR TYPES OF DATE FORMAT**/
+  0 - Stroke (Slash)
+  1 - Dots
+  2 - Dash
+  3 - Space
